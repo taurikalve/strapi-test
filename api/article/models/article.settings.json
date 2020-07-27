@@ -29,7 +29,8 @@
     },
     "category": {
       "model": "category",
-      "via": "articles"
+      "via": "articles",
+      "default": ""
     }
   }
 }
