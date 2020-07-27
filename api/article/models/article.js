@@ -1,11 +1,11 @@
 'use strict';
-const axios = require('axios');
+//const axios = require('axios');
 /**
  * Lifecycle callbacks for the `article` model.
  */
 
-const test = () => {
-  axios.post('http://localhost:8000/__refresh');
+const rebuild = () => {
+  //axios.post('http://localhost:8000/__refresh');
   console.log('---- GATSBY REBUILD ----');
 };
 
@@ -56,6 +56,7 @@ module.exports = {
     // Fired after an `insert` query.
     afterCreate: async (model, result) => {
       console.log('afterCreate: ');
+      rebuild();
     },
 
     // Before updating a value.
@@ -68,7 +69,7 @@ module.exports = {
     // Fired after an `update` query.
     afterUpdate: async (model, result) => {
       console.log('afterUpdate: ');
-      test();
+      rebuild();
     },
 
     // Before destroying a value.
@@ -81,6 +82,7 @@ module.exports = {
     // Fired after a `delete` query.
     afterDestroy: async (model, result) => {
       console.log('afterDestroy: ');
+      rebuild();
     }
   }
 };
