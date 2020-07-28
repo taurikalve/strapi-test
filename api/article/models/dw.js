@@ -8,7 +8,7 @@ const buildGatsby = () => {
       console.log(`exec error: ${error}`);
     }
   });*/
-  const process = spawn('bash', ['rebuild.sh']);
+  const process = spawn('bash', ['/home/tauri/rebuild.sh']);
   process.on('exit', (code) => {
     console.log('Child exited');
   });

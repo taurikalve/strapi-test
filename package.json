@@ -8,9 +8,7 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "heroku-prebuild": "node scripts/postgres-env.js",
-    "prod-build": "NODE_ENV=production npm build",
-    "prod-start": "NODE_ENV=production npm start"
+    "heroku-prebuild": "node scripts/postgres-env.js"
   },
   "devDependencies": {},
   "dependencies": {
