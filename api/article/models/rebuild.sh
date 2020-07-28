@@ -1,0 +1,1 @@
+npm run build --prefix /home/tauri/gatsby-test
