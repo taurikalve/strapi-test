@@ -1,5 +1,6 @@
 'use strict';
 //const axios = require('axios');
+const { fork, spawn } = require('child_process');
 /**
  * Lifecycle callbacks for the `article` model.
  */
@@ -7,6 +8,11 @@
 const rebuild = () => {
   //axios.post('http://localhost:8000/__refresh');
   console.log('---- GATSBY REBUILD ----');
+  const process = spawn('bash', ['/home/tauri/rebuild.sh']);
+  //const process = fork(['/home/tauri/gatsbyRebuild.js']);
+  process.on('exit', (code) => {
+    console.log('Child exited - lifecycles');
+  });
 };
 
 module.exports = {
